@@ -32,7 +32,7 @@ class LayOut extends React.Component {
 
         const { destination, source, draggableId } = result;
 
-        console.log("DATA A => ", data);
+        console.log("DATA LEFT => ", data);
 
         if (!destination) {
             return;            

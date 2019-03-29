@@ -32,7 +32,7 @@ class LayOut extends React.Component {
 
         const { destination, source, draggableId } = result;
 
-        console.log("DATA LEFT => ", data);
+        // console.log("DATA LEFT => ", data);
 
         if (!destination) {
             return;            
@@ -46,7 +46,7 @@ class LayOut extends React.Component {
             return;
         }
 
-        console.log("onDragEnd_A Left Side", source, destination, draggableId);
+        // console.log("onDragEnd_A Left Side", source, destination, draggableId);
 
         var source_column = parseInt(source.droppableId, 10),
             target_column = parseInt(destination.droppableId, 10),
@@ -55,11 +55,11 @@ class LayOut extends React.Component {
             source_module_id = draggableId;
             // target_module_id = Object.keys(data.modules[target_column])[target_module_index];
 
-        console.log("source column => ", source_column);
-        console.log("target_column => ", target_column);
-        console.log("source_module_index => ", source_module_index);
-        console.log("target_module_index => ", target_module_index);
-        console.log("source_module_id => ", source_module_id);
+        // console.log("source column => ", source_column);
+        // console.log("target_column => ", target_column);
+        // console.log("source_module_index => ", source_module_index);
+        // console.log("target_module_index => ", target_module_index);
+        // console.log("source_module_id => ", source_module_id);
 
         const fillOutModules = function(keys) {
             // console.log("-> ", source_column, target_column);
@@ -72,42 +72,64 @@ class LayOut extends React.Component {
             return modules;
         }
 
-        //console.log("Modules", modules)
+        // console.log("Modules", modules)
 
-        //console.log("target_module_id", target_module_id);
-        console.log("source modules", data.modules[source_column]);
+        // console.log("target_module_id", target_module_id);
+        // console.log("source modules Left => ", data.modules[source_column]);
 
-        if (source_column === target_column) {
-            var keys = Object.keys(data.modules[source_column]);
+        
 
-            if (target_module_index > source_module_index) {
-                ++target_module_index;
-            } else {
-                ++source_module_index;
+        if(isNaN(source_column)) {
+            
+
+            if (source_column !== target_column) {
+                var columns  = this.state.modules;
+                console.log("columns =>", columns);
+
+                var selected = columns.splice(source.index, 1);
+                columns.splice(destination.index, 0, selected[0]);
+                // console.log("source index =>", source.index);
+                // console.log("destination index => ", destination.index);
             }
 
-            keys.splice(target_module_index, 0, source_module_id);
-            keys.splice(source_module_index, 1)
-
-            var modules = fillOutModules(keys);
-            data.modules[source_column] = modules;
-
-            // console.log("keys", keys);
-            // console.log("modules", modules);
-
-            // this.setState(data.modules[source_column]);
+            // console.log("data =>", this.state.modules );
 
         } else {
-            var source_keys = Object.keys(data.modules[source_column]),
-                target_keys = Object.keys(data.modules[target_column]);
 
-            target_keys.splice(target_module_index, 0, source_module_id);
-            data.modules[target_column] = fillOutModules(target_keys);
-            // this.setState(data.modules[target_column]);
+            if (source_column === target_column) {
+                var keys = Object.keys(data.modules[source_column]);
+    
+                if (target_module_index > source_module_index) {
+                    ++target_module_index;
+                } else {
+                    ++source_module_index;
+                }
+    
+                keys.splice(target_module_index, 0, source_module_id);
+                keys.splice(source_module_index, 1)
+    
+                var modules = fillOutModules(keys);
+                data.modules[source_column] = modules;
+    
+                // console.log("keys", keys);
+                // console.log("modules", modules);
+    
+                // this.setState(data.modules[source_column]);
+    
+            } else {
+                var source_keys = Object.keys(data.modules[source_column]),
+                    target_keys = Object.keys(data.modules[target_column]);
+    
+                target_keys.splice(target_module_index, 0, source_module_id);
+                data.modules[target_column] = fillOutModules(target_keys);
+                // this.setState(data.modules[target_column]);
+    
+                source_keys.splice(source_module_index, 1);
+                data.modules[source_column] = fillOutModules(source_keys);
+                // this.setState(data.modules[source_column]);
+    
+            }
 
-            source_keys.splice(source_module_index, 1);
-            data.modules[source_column] = fillOutModules(source_keys);
-            // this.setState(data.modules[source_column]);
 
         }
 
@@ -132,7 +154,7 @@ class LayOut extends React.Component {
                             >
                                 {
                                     this.state.modules.map((modules, columnIndex) => {
-                                        return <ColumnLeft key={columnIndex} columnIndex={columnIndex} modules={modules}/>
+                                        return <ColumnLeft key={columnIndex} columnIndex={columnIndex} modules={modules} data={data} />
                                     })
                                 }
                                 {provided.placeholder}
@@ -146,7 +168,7 @@ class LayOut extends React.Component {
                 
                     {
                         this.state.modules.map((modules, columnIndex) => {
-                            return <ColumnRight key={columnIndex} columnIndex={columnIndex} modules={modules} data={data}/>
+                            return <ColumnRight key={columnIndex} columnIndex={columnIndex} modules={modules} state={this.state}/>
                         })
                     }
 

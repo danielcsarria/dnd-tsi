@@ -38,7 +38,7 @@ export default class ColumnLeft extends React.Component{
                             ref = {provided.innerRef}
                         >
 
-                            <CollapsibleHead>
+                            <CollapsibleHead >
                                 <ColumnTitle
                                     {...provided.dragHandleProps}
                                 >
@@ -46,7 +46,7 @@ export default class ColumnLeft extends React.Component{
                                 </ColumnTitle>
                             </CollapsibleHead>
 
-                            <CollapsibleContent>
+                            <CollapsibleContent isExpanded={true}>
                                 <Droppable droppableId={droppableId}>
                                     {(provided) => (
                                         <ModuleContainer

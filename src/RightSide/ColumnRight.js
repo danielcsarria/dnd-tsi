@@ -50,30 +50,37 @@ export default class ColumnRight extends React.Component{
 
         if(isNaN(source_module)) {
             
-            const fillOutModules = function(keys, allModules) {
-                // console.log("-> ", source_column, target_column);
-                var newModules = {};
-                keys.forEach(key => {
-                    console.log("B columnIndex => ", columnIndex);
-                    console.log(key)
-                    newModules[key] = allModules[key];
-                });
-                console.log("New Modules", newModules);
-                return newModules;
-            }            
+            // const fillOutModules = function(keys, allModules) {
+            //     // console.log("-> ", source_column, target_column);
+            //     var newModules = {};
+            //     keys.forEach(key => {
+            //         console.log("B columnIndex => ", columnIndex);
+            //         console.log(key)
+            //         newModules[key] = allModules[key];
+            //     });
+            //     console.log("New Modules", newModules);
+            //     return newModules;
+            // }            
 
             var modules = this.state.modules[columnIndex],
-                keys = Object.keys(this.state.modules[columnIndex]);
+                keys = Object.keys(modules);
             
-            console.log("keys =>", keys);
+            // console.log("keys =>", keys);
 
-            var modSelected = keys.splice(source_item_index, 1);
-            keys.splice(target_item_index, 0, modSelected[0]);
+            // var modSelected = keys.splice(source_item_index, 1);
+            // keys.splice(target_item_index, 0, modSelected[0]);
 
-            modules = fillOutModules(keys, modules);
-            // this.setState(this.state);
+            const newModules = Array.from(keys);
+            const modSelected = newModules.splice(source.index, 1);
+            newModules.splice(destination.index, 0, modSelected[0]);
 
-            this.setState(modules);
+
+            console.log("newModules =>", newModules)
+
+            // modules = fillOutModules(keys, modules);
+            // // this.setState(this.state);
+
+            // this.setState(modules);
 
         } else {
 

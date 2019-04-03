@@ -41,7 +41,7 @@ export default class ModuleLeft extends React.Component{
                     >
                         <div className="title-container">
                             <div className="module-title">
-                                <FontAwesomeIcon icon={icon}/> {title}
+                                <FontAwesomeIcon icon={icon}/> {'\u00A0'}{title}
                             </div>
                         </div>
                     </div>

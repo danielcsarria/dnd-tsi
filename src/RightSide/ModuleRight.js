@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const ItemContainer = styled.div`
     padding: 10px;
+    margin-right: 25px;
 `;
 
 export default class ModuleRight extends React.Component{
@@ -51,7 +52,7 @@ export default class ModuleRight extends React.Component{
                             <div className="module-title"
                                 {...provided.dragHandleProps}
                             >
-                                <FontAwesomeIcon icon={icon}/> {title}
+                                <small><FontAwesomeIcon icon={icon}/> {'\u00A0'}{title}</small>
                             </div>
                         </div>
                         <Droppable droppableId={droppableId}>

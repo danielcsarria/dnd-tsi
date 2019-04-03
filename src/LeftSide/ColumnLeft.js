@@ -1,25 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
 import ModuleLeft from './ModuleLeft';
 import { Droppable, Draggable } from 'react-beautiful-dnd';
-import {CollapsibleComponent, CollapsibleHead, CollapsibleContent} from 'react-collapsible-component';
-
-
-const ColumnList = styled.div`
-    border: 1px solid red;
-    margin-bottom: 15px;
-    background-color: white;
-`;
-
-const ColumnTitle = styled.h3`
-    padding: 8px;
-`;
-const ModuleContainer = styled.div`
-    padding: 8px;
-    min-height: 200px;
-
-`;
-
+import '../FontAwesome';
+import '../style.css';
 
 export default class ColumnLeft extends React.Component{
     render(){
@@ -28,54 +11,75 @@ export default class ColumnLeft extends React.Component{
 
         const droppableId = String(columnIndex)
 
+        var title = columnIndex === 0 ? "Feature" : "Column " + columnIndex;
+        // console.log("modules =>", modules);
+        // console.log("title,", title )
+
+        var background = "";
+        var theClass = "";
+
+        if (title === "Feature"){
+            background = "column-feature ";
+            theClass = "module-container " + background;
+        } else if (title === "Column 1"){
+            background = "column-one";
+            theClass = "module-container " + background;
+        } else if (title === "Column 2"){
+            background = "column-two";
+            theClass = "module-container " + background;
+        } else if (title === "Column 3"){
+            background = "column-three";
+            theClass = "module-container " + background;
+        } else if (title === "Column 4"){
+            background = "column-four";
+            theClass = "module-container " + background;
+        }
+
+        const columnClass = "column " + background;
+
         return(
-            <CollapsibleComponent>
-                <Draggable draggableId={droppableId} index={columnIndex}>
+            <Draggable draggableId={droppableId} index={columnIndex}>
 
-                    {(provided) => (
-                        <ColumnList
-                            {...provided.draggableProps}
-                            ref = {provided.innerRef}
-                        >
+                {(provided) => (
+                    <div className={columnClass}
+                        {...provided.draggableProps}
+                        ref = {provided.innerRef}
+                    >
+                        <div className="column-container">
+                            <div className="column-title"
+                                {...provided.dragHandleProps}
+                            >
+                                {title}
+                            </div>
 
-                            <CollapsibleHead >
-                                <ColumnTitle
-                                    {...provided.dragHandleProps}
-                                >
-                                    Column: {columnIndex}
-                                </ColumnTitle>
-                            </CollapsibleHead>
+                            <Droppable droppableId={droppableId}>
+                                {(provided) => (
+                                    <div className="container"
+                                        {...provided.droppableProps}
+                                        ref={provided.innerRef}
+                                    >
+                                        {
+                                            Object.keys(modules).map((moduleKey, moduleIndex) => {
+                                                return <ModuleLeft 
+                                                    key={moduleKey} 
+                                                    columnIndex={columnIndex}
+                                                    moduleKey={moduleKey}
+                                                    moduleIndex={moduleIndex} 
+                                                    modules={modules}
+                                                    theClass={theClass}
+                                                    config={this.props.config}                             
+                                                />
+                                            })
+                                        }
+                                        {provided.placeholder}
+                                    </div>
+                                )}
+                            </Droppable>
+                        </div>
+                    </div>
+                )}
 
-                            <CollapsibleContent isExpanded={true}>
-                                <Droppable droppableId={droppableId}>
-                                    {(provided) => (
-                                        <ModuleContainer
-                                            {...provided.droppableProps}
-                                            ref={provided.innerRef}
-                                        >
-                                            {
-                                                Object.keys(modules).map((moduleKey, moduleIndex) => {
-                                                    return <ModuleLeft 
-                                                        key={moduleKey} 
-                                                        columnIndex={columnIndex}
-                                                        moduleKey={moduleKey}
-                                                        moduleIndex={moduleIndex} 
-                                                        modules={modules}                                 
-                                                    />
-                                                })
-                                            }
-                                            {provided.placeholder}
-                                        </ModuleContainer>
-                                    )}
-                                </Droppable>
-                            </CollapsibleContent>
-
-                        </ColumnList>
-                    )}
-
-                </Draggable>
-
-            </CollapsibleComponent>
+            </Draggable>
         )
     }
 }

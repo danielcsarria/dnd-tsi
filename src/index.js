@@ -1,28 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import data from './data/data.json';
+import config from './data/config.json'
 import ColumnLeft from './LeftSide/ColumnLeft';
-import styled from 'styled-components';
 import ColumnRight from './RightSide/ColumnRight';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
-
-const ColumnContainerLeft = styled.div`
-    width: 50%;
-    padding: 10px;
-    background-color: white;
-`;
-
-const ColumnContainerRight = styled.div`
-    width:50%;
-    padding: 10px;
-    background-color: white;
-`;
-
-const PageContainer = styled.div`
-    display: flex;
-    padding: 10px;
-`
-
+import './style.css';
 
 class LayOut extends React.Component {
 
@@ -53,7 +36,7 @@ class LayOut extends React.Component {
             source_module_index = source.index,
             target_module_index = destination.index,
             source_module_id = draggableId;
-            // target_module_id = Object.keys(data.modules[target_column])[target_module_index];
+        //     target_module_id = Object.keys(data.modules[target_column])[target_module_index];
 
         // console.log("source column => ", source_column);
         // console.log("target_column => ", target_column);
@@ -88,11 +71,9 @@ class LayOut extends React.Component {
 
                 var selected = columns.splice(source.index, 1);
                 columns.splice(destination.index, 0, selected[0]);
-                // console.log("source index =>", source.index);
-                // console.log("destination index => ", destination.index);
+                console.log("source index =>", source.index);
+                console.log("destination index => ", destination.index);
             }
-
-            // console.log("data =>", this.state.modules );
 
         } else {
 
@@ -141,40 +122,64 @@ class LayOut extends React.Component {
 
         return(
 
-            <PageContainer>
+            <div id="page-layout-editor">
 
-                <DragDropContext
-                    onDragEnd={this.onDragEnd_L}
-                >
-                    <Droppable droppableId="all-columns" type="column" direction="vertical">
-                        {(provided) => (
-                            <ColumnContainerLeft
-                                {...provided.droppableProps}
-                                ref = {provided.innerRef}
-                            >
-                                {
-                                    this.state.modules.map((modules, columnIndex) => {
-                                        return <ColumnLeft key={columnIndex} columnIndex={columnIndex} modules={modules} data={data} />
-                                    })
-                                }
-                                {provided.placeholder}
-                            </ColumnContainerLeft>
-                        )}
-                    </Droppable>
-                </DragDropContext>
+                <div className="top-bar">
+                    <div className="tb-container">
+                        <div className="tb-title">
+                            Page Layout Editor
+                        </div>
+                        <div className="tb-buttons">
+                            <button id="cancel-btn" className="btn btn-cancel">Cancel</button>
+                            <button id="apply-btn" className="btn btn-apply">Apply</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="page-container">
+                    <DragDropContext
+                        onDragEnd={this.onDragEnd_L}
+                    >
+                        <Droppable droppableId="all-columns" type="column" direction="vertical">
+                            {(provided) => (
+                                <div id="column-container-left"
+                                    {...provided.droppableProps}
+                                    ref = {provided.innerRef}
+                                >
+                                    {   
+                                        this.state.modules.map((modules, columnIndex) => {
+                                            return <ColumnLeft 
+                                                key={columnIndex} 
+                                                columnIndex={columnIndex} 
+                                                modules={modules} 
+                                                data={data} 
+                                                config={config} 
+                                            />
+                                        })
+                                    }
+                                    {provided.placeholder}
+                                </div>
+                            )}
+                        </Droppable>
+                    </DragDropContext>
 
 
-                <ColumnContainerRight>
-                
-                    {
-                        this.state.modules.map((modules, columnIndex) => {
-                            return <ColumnRight key={columnIndex} columnIndex={columnIndex} modules={modules} state={this.state}/>
-                        })
-                    }
+                    <div id="column-container-right">
+                        {
+                            this.state.modules.map((modules, columnIndex) => {
+                                return <ColumnRight 
+                                    key={columnIndex} 
+                                    columnIndex={columnIndex} 
+                                    modules={modules} 
+                                    state={this.state}
+                                    config={config}
+                                />
+                            })
+                        }
+                    </div>
+                </div>
 
-                </ColumnContainerRight>
-
-            </PageContainer>
+            </div>
 
         )
 

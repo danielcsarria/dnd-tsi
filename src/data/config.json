@@ -1,0 +1,719 @@
+{
+    "layouts": {
+      "setup": {
+        "1": {
+          "1": "988"
+        },
+        "2": {
+          "1": "652",
+          "2": "316"
+        },
+        "3": {
+          "1": "316",
+          "2": "652"
+        },
+        "4": {
+          "1": "316",
+          "2": "316",
+          "3": "316"
+        },
+        "5": {
+          "1": "484",
+          "2": "484"
+        },
+        "6": {
+          "1": "484",
+          "2": "232",
+          "3": "232"
+        },
+        "7": {
+          "1": "232",
+          "2": "232",
+          "3": "484"
+        },
+        "8": {
+          "1": "232",
+          "2": "484",
+          "3": "232"
+        },
+        "9": {
+          "1": "736",
+          "2": "232"
+        },
+        "10": {
+          "1": "232",
+          "2": "736"
+        },
+        "11": {
+          "1": "232",
+          "2": "232",
+          "3": "232",
+          "4": "232"
+        }
+      },
+      "columns": {
+        "182": 0,
+        "232": 0,
+        "316": 0,
+        "484": 2,
+        "652": 3,
+        "736": 3,
+        "988": 5,
+        "1060": 5
+      }
+    },
+    "modules": {
+      "article_1": {
+        "lbl": "Article v1",
+        "cols": 4,
+        "ico": "newspaper-o",
+        "tmpl": "default-clt",
+        "btns": "",
+        "isize": [
+          "landscape_4_3",
+          "portrait_3_4",
+          "landscape_3_2",
+          "portrait_2_3",
+          "square_1_1",
+          "widescreen_16_9",
+          "widescreen_2-4_1",
+          "widescreen_3_1",
+          "scaled_to_fit_3_2",
+          "scaled_to_fit_2-4_1",
+          "no_set_height",
+          "no_set_width_4_3",
+          "no_set_width_1_1",
+          "no_sizing"
+        ]
+      },
+      "article_2": {
+        "lbl": "Article v2",
+        "cols": 4,
+        "ico": "newspaper-o",
+        "tmpl": "default-clt",
+        "btns": "",
+        "isize": [
+          "landscape_4_3",
+          "portrait_3_4",
+          "landscape_3_2",
+          "portrait_2_3",
+          "square_1_1",
+          "widescreen_16_9",
+          "widescreen_2-4_1",
+          "scaled_to_fit_3_2",
+          "scaled_to_fit_2-4_1",
+          "no_set_height",
+          "no_set_width_4_3",
+          "no_set_width_1_1",
+          "no_sizing"
+        ]
+      },
+      "article_3": {
+        "lbl": "Article v3",
+        "cols": 4,
+        "ico": "newspaper-o",
+        "tmpl": "default-clt",
+        "btns": [
+          "left",
+          "center",
+          "right",
+          "h1",
+          "featured",
+          "visibleon",
+          "duplicate",
+          "hide",
+          "delete"
+        ],
+        "isize": [
+          "landscape_4_3",
+          "portrait_3_4",
+          "landscape_3_2",
+          "portrait_2_3",
+          "square_1_1",
+          "widescreen_16_9",
+          "widescreen_2-4_1",
+          "scaled_to_fit_3_2",
+          "scaled_to_fit_2-4_1",
+          "no_set_height",
+          "no_set_width_4_3",
+          "no_set_width_1_1",
+          "no_sizing"
+        ]
+      },
+      "banner_1": {
+        "lbl": "Banner Promo",
+        "cols": 0,
+        "ico": "flag",
+        "tmpl": "default-clt",
+        "btns": [
+          "left",
+          "center",
+          "h1",
+          "featured",
+          "visibleon",
+          "duplicate",
+          "hide",
+          "delete"
+        ],
+        "isize": [
+          "widescreen_2-4_1",
+          "widescreen_3_1",
+          "no_set_height",
+          "no_sizing"
+        ]
+      },
+      "buttons_1": {
+        "lbl": "Buttons v1",
+        "cols": 5,
+        "ico": "square-o",
+        "tmpl": "buttons",
+        "btns": [
+          "h1",
+          "featured",
+          "visibleon",
+          "duplicate",
+          "hide",
+          "delete"
+        ],
+        "isize": [
+          "square_1_1"
+        ]
+      },
+      "card_1": {
+        "lbl": "Card v1",
+        "cols": 0,
+        "ico": "id-card",
+        "tmpl": "default-clt",
+        "btns": "",
+        "isize": [
+          "landscape_4_3",
+          "portrait_3_4",
+          "landscape_3_2",
+          "portrait_2_3",
+          "square_1_1",
+          "widescreen_16_9",
+          "widescreen_2-4_1",
+          "scaled_to_fit_3_2",
+          "scaled_to_fit_2-4_1",
+          "no_set_height",
+          "no_set_width_4_3",
+          "no_set_width_1_1",
+          "no_sizing"
+        ]
+      },
+      "card_2": {
+        "lbl": "Card v2",
+        "cols": 0,
+        "ico": "id-card",
+        "tmpl": "default-clt",
+        "btns": "",
+        "isize": [
+          "landscape_4_3",
+          "portrait_3_4",
+          "landscape_3_2",
+          "portrait_2_3",
+          "square_1_1",
+          "widescreen_16_9",
+          "widescreen_2-4_1",
+          "scaled_to_fit_3_2",
+          "scaled_to_fit_2-4_1",
+          "no_set_height",
+          "no_set_width_4_3",
+          "no_set_width_1_1",
+          "no_sizing"
+        ]
+      },
+      "list_1": {
+        "lbl": "List v1",
+        "cols": 0,
+        "ico": "list-ol",
+        "tmpl": "default-clt",
+        "btns": [
+          "left",
+          "right",
+          "h1",
+          "featured",
+          "visibleon",
+          "duplicate",
+          "hide",
+          "delete"
+        ],
+        "isize": [
+          "landscape_4_3",
+          "portrait_3_4",
+          "landscape_3_2",
+          "portrait_2_3",
+          "square_1_1",
+          "round_1_1",
+          "scaled_to_fit_3_2"
+        ]
+      },
+      "list_2": {
+        "lbl": "List v2",
+        "cols": 4,
+        "ico": "list-ol",
+        "tmpl": "default-clt",
+        "btns": [
+          "left",
+          "right",
+          "h1",
+          "featured",
+          "visibleon",
+          "duplicate",
+          "hide",
+          "delete"
+        ],
+        "isize": [
+          "landscape_4_3",
+          "portrait_3_4",
+          "landscape_3_2",
+          "portrait_2_3",
+          "square_1_1",
+          "round_1_1",
+          "scaled_to_fit_3_2"
+        ]
+      },
+      "list_3": {
+        "lbl": "List v3",
+        "cols": 0,
+        "ico": "list-ul",
+        "tmpl": "default-clt",
+        "btns": [
+          "left",
+          "right",
+          "h1",
+          "featured",
+          "visibleon",
+          "duplicate",
+          "hide",
+          "delete"
+        ],
+        "isize": [
+          "landscape_4_3",
+          "portrait_3_4",
+          "landscape_3_2",
+          "portrait_2_3",
+          "square_1_1",
+          "round_1_1",
+          "scaled_to_fit_3_2"
+        ]
+      },
+      "menu_1": {
+        "lbl": "Menu v1",
+        "cols": 3,
+        "ico": "cutlery",
+        "tmpl": "default-clt",
+        "btns": "",
+        "isize": [
+          "landscape_4_3",
+          "portrait_3_4",
+          "landscape_3_2",
+          "portrait_2_3",
+          "square_1_1",
+          "round_1_1",
+          "widescreen_16_9",
+          "widescreen_2-4_1",
+          "scaled_to_fit_3_2",
+          "scaled_to_fit_2-4_1",
+          "no_set_height",
+          "no_set_width_4_3",
+          "no_set_width_1_1",
+          "no_sizing"
+        ]
+      },
+      "menu_2": {
+        "lbl": "Menu v2",
+        "cols": 4,
+        "ico": "cutlery",
+        "tmpl": "default-clt",
+        "btns": [
+          "h1",
+          "featured",
+          "visibleon",
+          "duplicate",
+          "hide",
+          "delete"
+        ],
+        "isize": [
+          "landscape_4_3",
+          "portrait_3_4",
+          "landscape_3_2",
+          "portrait_2_3",
+          "square_1_1",
+          "widescreen_16_9",
+          "widescreen_2-4_1",
+          "scaled_to_fit_3_2",
+          "scaled_to_fit_2-4_1",
+          "no_set_height",
+          "no_set_width_4_3",
+          "no_set_width_1_1",
+          "no_sizing"
+        ]
+      },
+      "menu_3": {
+        "lbl": "Small Menu List",
+        "cols": 0,
+        "ico": "cutlery",
+        "tmpl": "no-image",
+        "btns": [
+          "h1",
+          "featured",
+          "visibleon",
+          "duplicate",
+          "hide",
+          "delete"
+        ],
+        "isize": [
+          "landscape_4_3",
+          "portrait_3_4",
+          "landscape_3_2",
+          "portrait_2_3",
+          "square_1_1",
+          "widescreen_16_9",
+          "widescreen_2-4_1",
+          "scaled_to_fit_3_2",
+          "scaled_to_fit_2-4_1",
+          "no_set_height",
+          "no_set_width_4_3",
+          "no_set_width_1_1",
+          "no_sizing"
+        ]
+      },
+      "modal_1": {
+        "lbl": "Modal",
+        "cols": 0,
+        "ico": "window-restore",
+        "tmpl": "default-clt",
+        "btns": [
+          "left",
+          "center",
+          "right",
+          "plugin",
+          "h1",
+          "featured",
+          "visibleon",
+          "duplicate",
+          "hide",
+          "delete"
+        ],
+        "isize": [
+          "no_sizing"
+        ]
+      },
+      "parallax_1": {
+        "lbl": "Parallax Promo",
+        "cols": 0,
+        "ico": "tv",
+        "tmpl": "default-clt",
+        "btns": "",
+        "isize": [
+          "widescreen_2-4_1",
+          "widescreen_3_1",
+          "no_sizing"
+        ]
+      },
+      "photo_grid": {
+        "lbl": "Photo Grid",
+        "cols": 4,
+        "ico": "th",
+        "tmpl": "gallery",
+        "btns": [
+          "left",
+          "center",
+          "right",
+          "h1",
+          "featured",
+          "visibleon",
+          "duplicate",
+          "hide",
+          "delete"
+        ],
+        "isize": [
+          "landscape_4_3",
+          "portrait_3_4",
+          "landscape_3_2",
+          "portrait_2_3",
+          "square_1_1",
+          "widescreen_16_9",
+          "widescreen_2-4_1"
+        ]
+      },
+      "photo_tiles": {
+        "lbl": "Photo Tiles v1",
+        "cols": 4,
+        "ico": "th",
+        "tmpl": "gallery",
+        "btns": [
+          "left",
+          "center",
+          "right",
+          "h1",
+          "featured",
+          "visibleon",
+          "duplicate",
+          "hide",
+          "delete"
+        ],
+        "isize": [
+          "landscape_4_3",
+          "portrait_3_4",
+          "landscape_3_2",
+          "square_1_1",
+          "widescreen_16_9",
+          "widescreen_2-4_1"
+        ]
+      },
+      "photo_tiles_2": {
+        "lbl": "Photo Tiles v2",
+        "cols": 5,
+        "ico": "th",
+        "tmpl": "gallery",
+        "btns": [
+          "left",
+          "center",
+          "right",
+          "h1",
+          "featured",
+          "visibleon",
+          "duplicate",
+          "hide",
+          "delete"
+        ],
+        "isize": [
+          "landscape_4_3",
+          "portrait_3_4",
+          "landscape_3_2",
+          "portrait_2_3",
+          "square_1_1",
+          "widescreen_16_9",
+          "widescreen_2-4_1",
+          "widescreen_3_1"
+        ]
+      },
+      "photo_sheet": {
+        "lbl": "Photo Sheet",
+        "cols": 5,
+        "ico": "th",
+        "tmpl": "gallery",
+        "btns": [
+          "left",
+          "center",
+          "right",
+          "h1",
+          "featured",
+          "visibleon",
+          "duplicate",
+          "hide",
+          "delete"
+        ],
+        "isize": [
+          "landscape_4_3",
+          "portrait_3_4",
+          "landscape_3_2",
+          "portrait_2_3",
+          "square_1_1",
+          "widescreen_16_9",
+          "widescreen_2-4_1",
+          "widescreen_3_1",
+          "scaled_to_fit_3_2",
+          "scaled_to_fit_2-4_1",
+          "no_set_height",
+          "no_set_width_4_3",
+          "no_set_width_1_1",
+          "no_sizing"
+        ]
+      },
+      "photo_gallery_1": {
+        "lbl": "Photo Gallery",
+        "cols": 0,
+        "ico": "image",
+        "tmpl": "default-clt",
+        "btns": "",
+        "isize": [
+          "landscape_4_3",
+          "portrait_3_4",
+          "landscape_3_2",
+          "portrait_2_3",
+          "square_1_1",
+          "widescreen_16_9",
+          "widescreen_2-4_1",
+          "widescreen_3_1",
+          "scaled_to_fit_3_2",
+          "scaled_to_fit_2-4_1",
+          "no_set_height",
+          "no_set_width_4_3",
+          "no_set_width_1_1",
+          "no_sizing"
+        ]
+      },
+      "photo_gallery_2": {
+        "lbl": "Thumbnail Gallery",
+        "cols": 0,
+        "ico": "image",
+        "tmpl": "default-clt",
+        "btns": "",
+        "isize": [
+          "landscape_4_3",
+          "portrait_3_4",
+          "landscape_3_2",
+          "portrait_2_3",
+          "square_1_1",
+          "widescreen_16_9",
+          "widescreen_2-4_1",
+          "widescreen_3_1",
+          "scaled_to_fit_3_2",
+          "scaled_to_fit_2-4_1",
+          "no_set_height",
+          "no_set_width_4_3",
+          "no_set_width_1_1",
+          "no_sizing"
+        ]
+      },
+      "plugin": {
+        "lbl": "Plugin",
+        "cols": 0,
+        "ico": "plug",
+        "tmpl": "plugin",
+        "btns": [
+          "left",
+          "center",
+          "right",
+          "h1",
+          "featured",
+          "visibleon",
+          "duplicate",
+          "hide",
+          "delete"
+        ],
+        "isize": [
+          "no_sizing"
+        ]
+      },
+      "services_1": {
+        "lbl": "Services",
+        "cols": 4,
+        "ico": "lightbulb-o",
+        "tmpl": "default-clt",
+        "btns": "",
+        "isize": [
+          "landscape_4_3",
+          "portrait_3_4",
+          "landscape_3_2",
+          "portrait_2_3",
+          "square_1_1",
+          "widescreen_16_9",
+          "widescreen_2-4_1",
+          "scaled_to_fit_3_2",
+          "scaled_to_fit_2-4_1",
+          "no_set_height",
+          "no_set_width_4_3",
+          "no_set_width_1_1",
+          "no_sizing"
+        ]
+      },
+      "social_banners_1": {
+        "lbl": "Social Promos",
+        "cols": 4,
+        "ico": "share-alt",
+        "tmpl": "default-clt",
+        "btns": "",
+        "isize": [
+          "landscape_4_3",
+          "portrait_3_4",
+          "landscape_3_2",
+          "portrait_2_3",
+          "square_1_1",
+          "widescreen_16_9",
+          "widescreen_2-4_1",
+          "scaled_to_fit_3_2",
+          "scaled_to_fit_2-4_1",
+          "no_set_height",
+          "no_set_width_4_3",
+          "no_set_width_1_1",
+          "no_sizing"
+        ]
+      },
+      "testimonials_1": {
+        "lbl": "Testimonials",
+        "cols": 3,
+        "ico": "star",
+        "tmpl": "gallery",
+        "btns": [
+          "h1",
+          "featured",
+          "visibleon",
+          "duplicate",
+          "hide",
+          "delete"
+        ],
+        "isize": [
+          "round_1_1",
+          "square_1_1"
+        ]
+      },
+      "video": {
+        "lbl": "Video (Beta)",
+        "cols": 0,
+        "ico": "tv",
+        "tmpl": "default",
+        "btns": "",
+        "isize": [
+          "widescreen_2-4_1",
+          "widescreen_16_9"
+        ]
+      },
+      "video_1b": {
+        "lbl": "Video",
+        "cols": 0,
+        "ico": "tv",
+        "tmpl": "gallery",
+        "btns": "",
+        "isize": [
+          "widescreen_2-4_1",
+          "widescreen_16_9"
+        ]
+      },
+      "sec_start": {
+        "lbl": "::: START Section :::",
+        "cols": 0,
+        "ico": "flag-o",
+        "tmpl": "section_2",
+        "btns": [
+          "left",
+          "center",
+          "right",
+          "visibleon",
+          "duplicate",
+          "hide",
+          "delete"
+        ],
+        "isize": [
+          "landscape_4_3",
+          "portrait_3_4",
+          "landscape_3_2",
+          "portrait_2_3",
+          "square_1_1",
+          "widescreen_16_9",
+          "widescreen_2-4_1",
+          "no_set_height",
+          "no_sizing"
+        ]
+      },
+      "sec_end": {
+        "lbl": "::: END Section :::",
+        "cols": 0,
+        "ico": "flag-checkered",
+        "tmpl": "section_2",
+        "btns": [
+          "visibleon",
+          "duplicate",
+          "hide",
+          "delete"
+        ],
+        "isize": [
+          "landscape_4_3",
+          "square_1_1"
+        ]
+      }
+    }
+  }

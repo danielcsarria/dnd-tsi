@@ -2,21 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import Item from './Item';
 import { Droppable, Draggable } from 'react-beautiful-dnd';
-
-const Container = styled.div`
-    padding: 8px;
-    border: 1px solid blue;
-    margin-bottom: 10px;
-    background-color: white;
-
-`;
-
-const Title = styled.h4`
-    padding: 8px;
-`;
+import '../style.css';
+import '../FontAwesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const ItemContainer = styled.div`
-    padding: 8px;
+    padding: 10px;
 `;
 
 export default class ModuleRight extends React.Component{
@@ -27,24 +18,42 @@ export default class ModuleRight extends React.Component{
         const modules = this.props.modules;
 
         const droppableId = String(moduleIndex);
-
         const module = modules[moduleKey];
-        // const type = module.type;
+        const type = module.type
+        const config = this.props.config.modules[type];
+        const title = config.lbl;
         const items = module.items;
+
+        const theClass = this.props.theClass;
+
+        var icon = config.ico;
+
+        if (icon === "newspaper-o"){
+            icon = "newspaper";
+        } else if (icon === "lightbulb-o") {
+            icon ="lightbulb";
+        } else if (icon === "square-o"){
+            icon = "square";
+        } else if (icon === "cutlery"){
+            icon = "utensils";
+        } else if (icon === "flag-o"){
+            icon = "flag";
+        }
 
         return(
             <Draggable draggableId={droppableId} index={moduleIndex}>
                 {(provided) => (
-                    <Container
+                    <div className={theClass}
                         {...provided.draggableProps}
                         ref={provided.innerRef}
                     >
-                        <Title
-                            {...provided.dragHandleProps}
-                        >
-                            Module: {moduleKey} 
-                            <div> => {columnIndex}, {moduleIndex}</div>
-                        </Title>
+                        <div className="title-container">
+                            <div className="module-title"
+                                {...provided.dragHandleProps}
+                            >
+                                <FontAwesomeIcon icon={icon}/> {title}
+                            </div>
+                        </div>
                         <Droppable droppableId={droppableId}>
                             {(provided) => (
                                 <ItemContainer
@@ -68,7 +77,7 @@ export default class ModuleRight extends React.Component{
                                 </ItemContainer>
                             )}
                         </Droppable>
-                    </Container>
+                    </div>
                 )}
             </Draggable>
         )

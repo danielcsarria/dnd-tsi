@@ -1,15 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
 import Item from './Item';
 import { Droppable, Draggable } from 'react-beautiful-dnd';
 import '../style.css';
 import '../FontAwesome';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-const ItemContainer = styled.div`
-    padding: 10px;
-    margin-right: 25px;
-`;
 
 export default class ModuleRight extends React.Component{
     render(){
@@ -57,7 +51,7 @@ export default class ModuleRight extends React.Component{
                         </div>
                         <Droppable droppableId={droppableId}>
                             {(provided) => (
-                                <ItemContainer
+                                <div className="i-container"
                                     {...provided.droppableProps}
                                     ref={provided.innerRef}
                                 >
@@ -75,7 +69,7 @@ export default class ModuleRight extends React.Component{
                                         })
                                     }
                                     {provided.placeholder}
-                                </ItemContainer>
+                                </div>
                             )}
                         </Droppable>
                     </div>

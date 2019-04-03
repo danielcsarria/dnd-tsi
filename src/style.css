@@ -238,6 +238,11 @@ body,html {
     font-weight: normal;
 }
 
+.i-container {
+    padding: 10px;
+    margin-right: 25px;
+}
+
 
 .item-img {
     background-color: #a4a4a4;

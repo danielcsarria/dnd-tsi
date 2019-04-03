@@ -1,8 +1,8 @@
 import React from 'react';
 import { Draggable } from 'react-beautiful-dnd';
-import '../FontAwesome';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../style.css';
+import '../FontAwesome';
 
 export default class ModuleLeft extends React.Component{
     render(){

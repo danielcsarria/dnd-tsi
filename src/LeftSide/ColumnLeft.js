@@ -8,7 +8,6 @@ export default class ColumnLeft extends React.Component{
     render(){
         const columnIndex = this.props.columnIndex;
         const modules = this.props.modules;
-
         const droppableId = String(columnIndex)
 
         var title = columnIndex === 0 ? "Feature" : "Column " + columnIndex;

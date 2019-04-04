@@ -41,6 +41,8 @@ export default class ModuleRight extends React.Component{
         const imgsize = modules[moduleKey].imgsize;
         const ratio = modules_img_sizes[imgsize].ratio;
 
+        const className = "btn btn-apply btn-module btn-" + columnIndex;
+
         // console.log()
 
         const theClass = this.props.theClass;
@@ -71,15 +73,19 @@ export default class ModuleRight extends React.Component{
                             <div className="module-title"
                                 {...provided.dragHandleProps}
                             >
-                                <small>
-                                    <FontAwesomeIcon icon={icon}/>
-                                    {'\u00A0'}{'\u00A0'}{'\u00A0'}{title}
-                                 </small>
+                                <FontAwesomeIcon icon={icon}/>
+                                {'\u00A0'}{'\u00A0'}{'\u00A0'}{title}    
                             </div>
                             <div className="ratio-box-container">
-                                <div className="ratio-box">
-                                    {ratio}
+                                <div className="flex-box">
+                                    <div className="ratio-box">
+                                        {ratio}
+                                    </div>
+                                    <div className="module-button">
+                                        <button className={className}><FontAwesomeIcon icon="share" />{'\u00A0'} Go to Module</button>
+                                    </div>
                                 </div>
+                                
                             </div>
 
                         </div>

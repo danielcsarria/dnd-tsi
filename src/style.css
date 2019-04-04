@@ -9,6 +9,12 @@ body,html {
     height: 100%;
 }
 
+.flex-box {
+    display: flex;
+    float: right;
+    align-items: center;
+}
+
 .top-bar {
     background-color: white;
     z-index: 1;
@@ -90,7 +96,9 @@ body,html {
     background-color: #22abaf;
 }
 
-
+.btn-module:hover {
+    background-color: rgba(0,0,0,0.1);
+}
 
 #page-container {
     display: flex;
@@ -154,19 +162,24 @@ body,html {
     background-color: #f2f2f2;
 }
 
-#column-container-right .column-0 .title-container {
+#column-container-right .column-0 .title-container,
+.btn-0 {
     background-color: #3BD2D6;
 }
-#column-container-right .column-1 .title-container {
+#column-container-right .column-1 .title-container,
+.btn-1 {
     background-color: #9F5BD5;
 }
-#column-container-right .column-2 .title-container {
+#column-container-right .column-2 .title-container,
+.btn-2 {
     background-color: #7ece57;
 }
-#column-container-right .column-3 .title-container {
+#column-container-right .column-3 .title-container,
+.btn-3 {
     background-color: #f0ad4e;
 }
-#column-container-right .column-4 .title-container {
+#column-container-right .column-4 .title-container,
+.btn-4 {
     background-color: #d9534f;
 }
 
@@ -195,6 +208,7 @@ body,html {
 
 .title-container {
     display: flex;
+    align-items: center;
 }
 
 .ratio-box-container,

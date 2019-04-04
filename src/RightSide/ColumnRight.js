@@ -105,25 +105,8 @@ export default class ColumnRight extends React.Component{
         const modules = this.state.modules[columnIndex];
         var title = columnIndex === 0 ? "Feature" : "Column " + columnIndex;
 
-        var background = "";
-        var theClass = "";
-
-        if (title === "Feature"){
-            background = "column-feature ";
-            theClass = "module-container " + background;
-        } else if (title === "Column 1"){
-            background = "column-one";
-            theClass = "module-container " + background;
-        } else if (title === "Column 2"){
-            background = "column-two";
-            theClass = "module-container " + background;
-        } else if (title === "Column 3"){
-            background = "column-three";
-            theClass = "module-container " + background;
-        } else if (title === "Column 4"){
-            background = "column-four";
-            theClass = "module-container " + background;
-        }
+        var background = "column-" + columnIndex;
+        var theClass = "module-container " + background;
 
         const columnClass = "column " + background;
 

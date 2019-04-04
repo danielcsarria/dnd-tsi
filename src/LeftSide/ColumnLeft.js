@@ -14,25 +14,8 @@ export default class ColumnLeft extends React.Component{
         // console.log("modules =>", modules);
         // console.log("title,", title )
 
-        var background = "";
-        var theClass = "";
-
-        if (title === "Feature"){
-            background = "column-feature ";
-            theClass = "module-container " + background;
-        } else if (title === "Column 1"){
-            background = "column-one";
-            theClass = "module-container " + background;
-        } else if (title === "Column 2"){
-            background = "column-two";
-            theClass = "module-container " + background;
-        } else if (title === "Column 3"){
-            background = "column-three";
-            theClass = "module-container " + background;
-        } else if (title === "Column 4"){
-            background = "column-four";
-            theClass = "module-container " + background;
-        }
+        var background = "column-" + columnIndex;
+        var theClass = "module-container " + background;
 
         const columnClass = "column " + background;
 

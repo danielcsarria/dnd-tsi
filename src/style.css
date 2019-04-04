@@ -146,27 +146,27 @@ body,html {
     align-items: center;
 }
 
-#column-container-right .column-feature,
-#column-container-right .column-one,
-#column-container-right .column-two,
-#column-container-right .column-three,
-#column-container-right .column-four {
+#column-container-right .column-0,
+#column-container-right .column-1,
+#column-container-right .column-2,
+#column-container-right .column-3,
+#column-container-right .column-4 {
     background-color: #f2f2f2;
 }
 
-#column-container-right .column-feature .title-container {
+#column-container-right .column-0 .title-container {
     background-color: #3BD2D6;
 }
-#column-container-right .column-one .title-container {
+#column-container-right .column-1 .title-container {
     background-color: #9F5BD5;
 }
-#column-container-right .column-two .title-container {
+#column-container-right .column-2 .title-container {
     background-color: #7ece57;
 }
-#column-container-right .column-three .title-container {
+#column-container-right .column-3 .title-container {
     background-color: #f0ad4e;
 }
-#column-container-right .column-four .title-container {
+#column-container-right .column-4 .title-container {
     background-color: #d9534f;
 }
 
@@ -193,22 +193,50 @@ body,html {
     margin-bottom: 9.5px;
 }
 
-.module-container.column-feature {
+.title-container {
+    display: flex;
+}
+
+.ratio-box-container,
+.module-title {
+    width: 50%;
+}
+
+.ratio-box-container {
+    text-align: right;
+}
+
+.ratio-box {
+    background: white;
+    color: #556473;
+    display: inline;
+    padding: 0.2em 0.6em 0.3em;
+    font-size: 75%;
+    font-weight: bold;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.25em;
+    margin: 4px 10px;
+}
+
+.module-container.column-0 {
     background-color: #3BD2D6;
 }
 
-.module-container.column-one {
+.module-container.column-1 {
     background-color: #9F5BD5;
 }
 
-.module-container.column-two{
+.module-container.column-2{
     background-color: #7ece57;
 }
 
-.module-container.column-three{
+.module-container.column-3{
     background-color: #f0ad4e;
 }
-.module-container.column-four {
+.module-container.column-4 {
     background: #d9534f;
 }
 
@@ -234,7 +262,6 @@ body,html {
     /* float: left;
     width: 100%; */
     font-weight: 500;
-    padding: 5px 100px 5px 10px;
     min-height: 20px;
     font-weight: normal;
 }
@@ -263,6 +290,7 @@ body,html {
 }
 
 .item-headline {
+    font-weight: normal;
     background: #ffffff;
     font-size: 13px;
     display: flex;

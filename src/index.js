@@ -11,6 +11,7 @@ class LayOut extends React.Component {
 
     state = data;
 
+
     onDragEnd_L = result => {
 
         const { destination, source, draggableId } = result;

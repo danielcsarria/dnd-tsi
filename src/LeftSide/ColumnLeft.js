@@ -1,6 +1,7 @@
 import React from 'react';
 import ModuleLeft from './ModuleLeft';
 import { Droppable, Draggable } from 'react-beautiful-dnd';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../FontAwesome';
 import '../style.css';
 
@@ -31,7 +32,7 @@ export default class ColumnLeft extends React.Component{
                             <div className="column-title"
                                 {...provided.dragHandleProps}
                             >
-                                {title}
+                                <FontAwesomeIcon icon="bars" />{'\u00A0'}{'\u00A0'}{title}
                             </div>
 
                             <Droppable droppableId={droppableId}>

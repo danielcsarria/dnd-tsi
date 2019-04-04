@@ -15,11 +15,15 @@ import {faNewspaper,
         faStar,
         faFlagCheckered,
         faUtensils,
-        faShare
+        faShare,
+        faGripLines,
+        faBars
         
     } from '@fortawesome/free-solid-svg-icons';
 
     library.add(
+        faBars,
+        faGripLines,
         faShare,
         faUtensils,
         faNewspaper, 

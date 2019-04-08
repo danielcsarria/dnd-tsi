@@ -11,6 +11,10 @@ export default class ColumnRight extends React.Component{
     onDragEnd_R = result => {
 
         const columnIndex = this.props.columnIndex;
+        const modules = this.state.modules[columnIndex];
+        const moduleKey =  Object.keys(modules).map((moduleKey) => {
+            return moduleKey;
+        }); 
 
         const { destination, source } = result;
 
@@ -38,25 +42,44 @@ export default class ColumnRight extends React.Component{
 
         if(isNaN(source_module)) {
             
-            const fillOutModules = function(keys, allModules) {
-                // console.log("-> ", source_column, target_column);
-                var newModules = {};
-                keys.forEach(key => {
-                    console.log("B columnIndex => ", columnIndex);
-                    console.log(key)
-                    newModules[key] = allModules[key];
-                });
-                // console.log("New Modules", newModules);
-                return newModules;
-            }            
+            // const fillOutModules = function(keys, allModules) {
+            //     // console.log("-> ", source_column, target_column);
+            //     var newModules = {};
+            //     keys.forEach(key => {
+            //         console.log("B columnIndex => ", columnIndex);
+            //         console.log(key)
+            //         newModules[key] = allModules[key];
+            //     });
+            //     // console.log("New Modules", newModules);
+            //     return newModules;
+            // }            
 
-            var modules = this.state.modules[columnIndex],
-                keys = Object.keys(modules);
+            
+            
+            var modSource = moduleKey[source.index];
+            var modDestination = moduleKey[destination.index];
+
+            
+
+            // const newModules = modules.splice(modSource, 1);
+            // modules.splice(modDestination, 0, newModules[0]);
+
+            // var theResult = Object.keys(modules).slice(modSource, 1).map(key => ({[key]:modules[key]}));
+            // Object.keys(modules).slice(modDestination, 0, theResult[0]).map(key => ({[key]:modules[key]}));
+
+            // console.log("theResult =>", theResult);
+            // console.log("newModules", newModules);
+            
+                // keys = Object.keys(modules);
             
             // console.log("keys =>", keys);
 
-            var modSelected = keys.splice(source_item_index, 1);
-            keys.splice(target_item_index, 0, modSelected[0]);
+            // console.log("modSelected =>", modSource)
+            // console.log("modDestination =>", modDestination)
+            // console.log("modules =>", modules)
+
+            // var modSelected = keys.splice(source_item_index, 1);
+            // keys.splice(target_item_index, 0, modSelected[0]);
 
             // const newModules = Array.from(keys);
             // const modSelected = newModules.splice(source.index, 1);
@@ -66,7 +89,7 @@ export default class ColumnRight extends React.Component{
             // console.log("modSelected =>", modSelected)
             // console.log("keys =>", keys);
 
-            modules = fillOutModules(keys, modules);
+            // modules = fillOutModules(keys, modules);
 
             // this.setState(newModules);
 

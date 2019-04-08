@@ -59,7 +59,7 @@ export default class ModuleLeft extends React.Component{
         var icon = this.myFunction(config.ico);
         const ratio = modules_img_sizes[imgsize].ratio;
 
-        console.log(modules.imgsize)
+        // console.log(modules.imgsize)
         // console.log("RATIO =>", modules_img_sizes[imgsize].ratio);
 
         return(

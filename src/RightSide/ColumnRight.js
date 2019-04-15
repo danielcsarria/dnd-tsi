@@ -114,10 +114,8 @@ export default class ColumnRight extends React.Component{
             }
 
             // source_items = [];
-        }
+        } 
         
-        
-
         this.setState(data);
         
     }

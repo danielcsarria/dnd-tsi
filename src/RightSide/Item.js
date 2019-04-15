@@ -1,9 +1,16 @@
 import React from 'react';
 import { Draggable } from 'react-beautiful-dnd';
 import '../style.css';
+import CheckboxContainer from './CheckboxContainer';
+import Checkbox from './Checkbox';
+
+const options = {}
 
 export default class ModuleRight extends React.Component{
+    
+
     render(){
+
         
         const item = this.props.item;
         // const columnIndex = this.props.columnIndex;
@@ -26,11 +33,12 @@ export default class ModuleRight extends React.Component{
                         {...provided.dragHandleProps}
                         ref = {provided.innerRef}
                     >
-                        <div className="item-img" style={bgImage} >
-                            {/* <img src={ImgSrc} alt=""></img> */}
-                        </div>
+                        <div className="item-img" style={bgImage} />
                         <div className="item-headline">
                             {headline}
+                        </div>
+                        <div className="checkbox-container">
+                            {/* <input className="item=checkbox" type="checkbox" name={item.id} value={itemIndex} /> */}
                         </div>
                     </div>
                 )}

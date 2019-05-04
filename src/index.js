@@ -1,12 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import initialData from './data/data.json';
-import config from './data/config.json'
+import config from './data/config.json';
+import modules_img_sizes from './data/modules_img_sizes';
+
 import ColumnLeft from './LeftSide/ColumnLeft';
 import ColumnRight from './RightSide/ColumnRight';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
-import './style.css';
 import { onDragEnd_L, onDragEnd_R, onSelectItem, selectedItemsQty, setSelectedItems, moveSelectedItems } from './scripts';
+
+import './style.css';
 
 class LayOut extends React.Component {
 
@@ -58,6 +62,7 @@ class LayOut extends React.Component {
                                                 columnIndex={columnIndex} 
                                                 modules={modules} 
                                                 config={config}
+                                                modules_img_sizes={modules_img_sizes}
                                                 moveSelectedItems={this.moveSelectedItems}
                                             />
                                         })
@@ -77,6 +82,7 @@ class LayOut extends React.Component {
                                     columnIndex={columnIndex} 
                                     modules={this.state.data.modules} 
                                     config={config}
+                                    modules_img_sizes={modules_img_sizes}
                                     onDragEnd={this.onDragEnd_R}
                                     selectedItemsQty={selectedItemsQty}
                                     onSelectItem={this.onSelectItem}

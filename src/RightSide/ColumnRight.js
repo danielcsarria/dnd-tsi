@@ -67,6 +67,7 @@ export default class ColumnRight extends React.Component{
                                             modules={modules}
                                             theClass={theClass}
                                             config={this.props.config}
+                                            modules_img_sizes={this.props.modules_img_sizes}
                                             onSelectItem={this.onSelectItem}      
                                             moveSelectedItems={() => this.moveSelectedItems(columnIndex, moduleKey)}
                                         />

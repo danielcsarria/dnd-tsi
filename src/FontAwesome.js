@@ -17,6 +17,7 @@ import {faNewspaper,
         faUtensils,
         faShare,
         faGripLines,
+        faCheck,
         faBars
         
     } from '@fortawesome/free-solid-svg-icons';
@@ -24,6 +25,7 @@ import {faNewspaper,
     library.add(
         faBars,
         faGripLines,
+        faCheck,
         faShare,
         faUtensils,
         faNewspaper, 

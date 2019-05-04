@@ -1,10 +1,8 @@
 import React from 'react';
 import { Draggable } from 'react-beautiful-dnd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import '../style.css';
 import '../FontAwesome';
-// import '../scripts';
-
+import '../style.css';
 
 
 const modules_img_sizes = { // USED ALSO AS DEFAULT IF NOT INCLUDED IN THE THEME CONFIGURATION FILE
@@ -71,7 +69,7 @@ export default class ModuleLeft extends React.Component{
                         {...provided.dragHandleProps}
                         ref={provided.innerRef}
                     >
-                        <div className="title-container">
+                        <div className="title-container" onClick={() => this.props.moveSelectedItems()}>
 
                             <div className="module-title">
                                 <FontAwesomeIcon icon={icon}/>

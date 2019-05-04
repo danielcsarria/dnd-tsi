@@ -6,6 +6,16 @@ import '../FontAwesome';
 import '../style.css';
 
 export default class ColumnLeft extends React.Component{
+
+    constructor(props) {
+        super(props);
+        this.moveSelectedItems = this.moveSelectedItems.bind(this);
+    }  
+
+    moveSelectedItems(columnIndex, moduleKey) {
+        this.props.moveSelectedItems(columnIndex, moduleKey);
+    }
+
     render(){
         const columnIndex = this.props.columnIndex;
         const modules = this.props.modules;
@@ -29,10 +39,13 @@ export default class ColumnLeft extends React.Component{
                         ref = {provided.innerRef}
                     >
                         <div className="column-container">
-                            <div className="column-title"
+                            <div className="column-header column-title"
                                 {...provided.dragHandleProps}
                             >
-                                <FontAwesomeIcon icon="bars" />{'\u00A0'}{'\u00A0'}{title}
+                                <div>
+                                    <FontAwesomeIcon icon="bars" />{'\u00A0'}{'\u00A0'}
+                                    {title}
+                                </div>
                             </div>
 
                             <Droppable droppableId={droppableId}>
@@ -50,7 +63,8 @@ export default class ColumnLeft extends React.Component{
                                                     moduleIndex={moduleIndex} 
                                                     modules={modules}
                                                     theClass={theClass}
-                                                    config={this.props.config}                             
+                                                    config={this.props.config}
+                                                    moveSelectedItems={() => this.moveSelectedItems(columnIndex, moduleKey)}
                                                 />
                                             })
                                         }

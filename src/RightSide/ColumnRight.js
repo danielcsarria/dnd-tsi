@@ -8,10 +8,21 @@ export default class ColumnRight extends React.Component{
     constructor(props) {
         super(props);
         this.onDragEnd = this.onDragEnd.bind(this);
+        this.onSelectItem = this.onSelectItem.bind(this);
+        this.moveSelectedItems = this.moveSelectedItems.bind(this);
     }  
 
     onDragEnd(result) {
         this.props.onDragEnd(result, this.props.columnIndex);
+    }
+
+    onSelectItem(itemIndex, moduleKey, columnIndex) {
+        // console.log(this.props.onSelectItem, itemIndex, moduleKey, columnIndex);
+        this.props.onSelectItem(itemIndex, moduleKey, columnIndex);
+    }
+
+    moveSelectedItems(columnIndex, moduleKey) {
+        this.props.moveSelectedItems(columnIndex, moduleKey);
     }
 
     render(){
@@ -26,8 +37,18 @@ export default class ColumnRight extends React.Component{
 
         return(
             <div className={columnClass}>
-                <div className="column-title">
-                    {title}
+                <div className="column-header">
+                    <div className="column-title">
+                        {title}
+                    </div>
+                    <div className="column-title move-selected-items">
+                        {columnIndex!==0 || this.props.selectedItemsQty===0 ? <div /> : 
+                            <button 
+                                onClick={() => this.props.clearSelectedItems(false)}
+                            >
+                                {this.props.selectedItemsQty} item{this.props.selectedItemsQty!==1?"s":""} selected
+                            </button>}
+                    </div>                    
                 </div>
                 <DragDropContext onDragEnd={this.onDragEnd}>
                     <Droppable droppableId="all-modules" type="modules" direction="vertical">
@@ -45,7 +66,9 @@ export default class ColumnRight extends React.Component{
                                             moduleIndex={moduleIndex} 
                                             modules={modules}
                                             theClass={theClass}
-                                            config={this.props.config}                               
+                                            config={this.props.config}
+                                            onSelectItem={this.onSelectItem}      
+                                            moveSelectedItems={() => this.moveSelectedItems(columnIndex, moduleKey)}
                                         />
                                     })
                                 } 

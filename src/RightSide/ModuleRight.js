@@ -26,6 +26,7 @@ const modules_img_sizes = { // USED ALSO AS DEFAULT IF NOT INCLUDED IN THE THEME
 };
 
 export default class ModuleRight extends React.Component{
+   
     render(){
         const columnIndex = this.props.columnIndex;
         const moduleKey = this.props.moduleKey;
@@ -68,7 +69,7 @@ export default class ModuleRight extends React.Component{
                         {...provided.draggableProps}
                         ref={provided.innerRef}
                     >
-                        <div className="title-container">
+                        <div className="title-container" onClick={() => this.props.moveSelectedItems()}>
 
                             <div className="module-title"
                                 {...provided.dragHandleProps}
@@ -104,6 +105,7 @@ export default class ModuleRight extends React.Component{
                                                     columnIndex={columnIndex} 
                                                     moduleIndex={moduleIndex} 
                                                     itemIndex={itemIndex}
+                                                    onSelectItem={() => this.props.onSelectItem(itemIndex, moduleKey, columnIndex)}
                                                 />
                                             )
                                         })

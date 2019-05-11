@@ -230,9 +230,8 @@ class LayOut extends React.Component {
         
         this.setState({
             data : newData
-        });    
-        
-    }    
+        });            
+    }   
 
     render(){
 
